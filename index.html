@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald:300,700&effect=3d">
+	<script src="p5.min.js"></script>
+	<script src="sketch.js"></script>
+	<script src="dino.js"></script>
+	<script src="obstacle.js"></script>
+	<style>
+		body {
+			padding: 0;
+			margin: 0;
+			background-color: #454545;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		p {
+			position: absolute;
+			font-family: "Oswald";
+			color: grey;
+			font-size: 40px;
+		}
+
+		#gameover {
+			top: 10px;
+			font-size: 90px;
+		}
+
+		#restart {
+			bottom: 130px;
+			font-size: 50px;
+		}
+
+		#score {
+			bottom: 30px;
+			font-size: 30px;
+			color: grey;
+		}
+
+		#tips {
+			display: none;
+			left: 1415px;
+			top: 200px;
+			text-align: center;
+		}
+
+		#button {
+			position: fixed;
+			text-align: center;
+			line-height: 170px;
+			font-family: 'Oswald', sans-serif;
+			font-size: 28px;
+			border-radius: 50%;
+			background: #454545;
+			width: 170px;
+			height: 170px;
+			transition: transform .18s, background .2s, color .1s;
+			color: grey;
+			margin-right: 50%;
+			margin-left: 625px;
+			margin-top: 25%;
+			border: 1px solid grey;
+		}
+
+		#button:hover {
+			transform: scale(1.25);
+			background: grey;
+			color: #454545;
+		}
+
+		table {
+			position: absolute;
+			font-family: "Oswald";
+			font-size: 30px;
+			color: grey;
+			left: 50px;
+			top: 50px;
+		}
+	</style>
+</head>
+
+<body>
+	<p id="gameover"> </p>
+	<p id="restart"> </p>
+	<p id="score"> </p>
+	<p id="tips">
+		UP ARROW TO JUMP
+		<br><br><br><br><br><br><br>
+		DOWN ARROW TO DUCK
+	</p>
+	<table>
+		<tr>
+			<td>SCORES</td>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td id="name1"></td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td id="name2"></td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td id="name3"></td>
+		</tr>
+		<tr>
+			<td>4</td>
+			<td id="name4"></td>
+		</tr>
+		<tr>
+			<td>5</td>
+			<td id="name5"></td>
+		</tr>
+	</table>
+
+	<div id="button" onmouseover="showTips()" onmouseout="hideTips()">INSTRUCTIONS</div>
+	<script>
+		function showTips() {
+			document.getElementById("tips").style.display = "block";
+		}
+		function hideTips() {
+			document.getElementById("tips").style.display = "none";
+		}
+	</script>
+
+</body>
+
+</html>
